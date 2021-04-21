@@ -1,0 +1,134 @@
+normal areas 1
+ 838.5850721764999
+normal areas with X 1
+ 1748.230993777346
+pT**2 * f(pT) areas 1
+ 1972.228875778386
+<pT**2> 1
+ 1.1281283095874277
+T init 1
+ 0.7510420459559597
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         3,76249e+03   3,03489e+02  -1,59845e-03   1,47292e-09
+   2  Temper       2,44776e-01   1,28716e-02   4,20847e-08   6,57345e-05
+   3  Q            1,12909e+00   1,07998e-02   2,74064e-08   3,42932e-05
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  3    ERR DEF=1
+  9,211e+04 -3,512e+00  2,279e+00 
+ -3,512e+00  1,657e-04 -1,263e-04 
+  2,279e+00 -1,263e-04  1,166e-04 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3
+        1  0,94449   1,000 -0,899  0,695
+        2  0,98153  -0,899  1,000 -0,908
+        3  0,94945   0,695 -0,908  1,000
+
+Chi/NDF =  2.6871399497681754 / 12
+
+
+
+
+
+normal areas 2
+ 946.96386434675
+normal areas with X 2
+ 1941.0428547142444
+pT**2 * f(pT) areas 2
+ 2639.6375592118106
+<pT**2> 2
+ 1.359906893761195
+T init 2
+ 0.8245928976656284
+
+   EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         3,51574e+03   2,97161e+02   5,49102e-03   3,46604e-09
+   2  Temper       2,79121e-01   1,64333e-02  -2,79023e-07  -4,10616e-05
+   3  Q            1,12329e+00   1,31496e-02   1,07018e-07  -9,58725e-05
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  3    ERR DEF=1
+  8,830e+04 -4,449e+00  2,866e+00 
+ -4,449e+00  2,701e-04 -1,990e-04 
+  2,866e+00 -1,990e-04  1,729e-04 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3
+        1  0,95038   1,000 -0,911  0,733
+        2  0,98395  -0,911  1,000 -0,921
+        3  0,95576   0,733 -0,921  1,000
+
+Chi/NDF =  2.5316042142585777 / 12
+
+ 
+ 
+ 
+ 
+ 
+normal areas 3
+ 1044.987383655
+normal areas with X 3
+ 2139.6984734201437
+pT**2 * f(pT) areas 3
+ 2680.8374782987257
+<pT**2> 3
+ 1.2529043281568608
+T init 3
+ 0.7914873113818253
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         3,95801e+03   3,36934e+02  -9,89924e-03   1,10429e-09
+   2  Temper       2,80081e-01   1,70094e-02   8,32032e-07   7,21757e-05
+   3  Q            1,11163e+00   1,40202e-02  -8,42802e-07   5,41843e-05
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  3    ERR DEF=1
+  1,135e+05 -5,226e+00  3,555e+00 
+ -5,226e+00  2,893e-04 -2,222e-04 
+  3,555e+00 -2,222e-04  1,966e-04 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3
+        1  0,95019   1,000 -0,912  0,753
+        2  0,98511  -0,912  1,000 -0,932
+        3  0,96121   0,753 -0,932  1,000
+
+Chi/NDF =  5.264965911794309 / 12
+
+
+
+
+ 
+normal areas 4
+ 1198.1519263205
+normal areas with X 4
+ 2259.898664372207
+pT**2 * f(pT) areas 4
+ 3115.739820610743
+<pT**2> 4
+ 1.378707757888023
+T init 4
+ 0.8302733760298541
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         3,81327e+03   3,87398e+02   8,17181e-04  -3,85278e-10
+   2  Temper       3,00572e-01   1,87020e-02  -2,59076e-08  -8,98286e-06
+   3  Q            1,10761e+00   1,17673e-02   1,51149e-08  -4,05649e-06
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR=  3    ERR DEF=1
+  1,501e+05 -6,790e+00  3,601e+00 
+ -6,790e+00  3,498e-04 -2,046e-04 
+  3,601e+00 -2,046e-04  1,385e-04 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3
+        1  0,96293   1,000 -0,937  0,790
+        2  0,98681  -0,937  1,000 -0,930
+        3  0,95870   0,790 -0,930  1,000
+
+Chi/NDF =  5.007060367627044 / 12
+
+
+
+
+
+
+
+
+

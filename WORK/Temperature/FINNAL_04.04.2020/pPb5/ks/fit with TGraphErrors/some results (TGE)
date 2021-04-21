@@ -1,0 +1,210 @@
+Boltz
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.81937e+00   3.58971e-02   1.43709e-05   1.39039e-01
+   2  p1           1.10820e+02   4.94796e+00   1.97903e-03  -1.04378e-03
+
+
+temperature 1 = 0.354689
+t1 error = 0.00451601
+chi square = 440.744
+NDF = 14
+
+
+2001
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.84318e+00   3.54862e-02   1.83928e-05   1.93550e-02
+   2  p1           1.05433e+02   3.96152e+00   2.05536e-03  -1.70437e-04
+
+
+temperature 1 = 0.351719
+t1 error = 0.00438987
+chi square = 373.564
+NDF = 14
+
+
+1012
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.26518e+00   2.47098e-02   3.77177e-06   5.51816e-04
+   2  p1           6.23520e+01   1.31738e+00   2.01101e-04  -1.25452e-05
+
+
+temperature 1 = 0.441466
+t1 error = 0.00481574
+chi square = 198.082
+NDF = 14
+
+
+1505
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           4.04530e+00   3.55728e-01   7.95022e-06   2.69680e-04
+   2  p1          -1.45530e-01   1.85489e-02   9.25594e-07   4.89521e-03
+   3  p2           3.28911e+01   4.05505e+00   1.23607e-04  -2.19196e-06
+
+
+temperature 1 = 0.2472
+t1 error = 0.0217378
+chi square = 0.669127
+NDF = 13
+
+
+
+Andr
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           3.26528e+00   1.41780e+00   1.86703e-05   7.98878e-03
+   2  p1           6.12590e+02   9.66922e+02   1.34394e-02  -1.11177e-05
+   3  p2           2.02350e+00   9.75535e-02   7.23413e-06   2.08165e-02
+
+
+temperature 1 = 0.306253
+t1 error = 0.132977
+chi square = 20.5317
+NDF = 13
+
+
+1805
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           7.61197e-01   1.33163e-01   8.63461e-07  -1.08172e-01
+   2  p1           2.24087e+02   5.40578e+01   9.21845e-04   9.05879e-05
+   3  p2           8.40049e+00   7.32353e-01   6.96679e-06  -1.38265e-02
+
+
+temperature 1 = 1.31372
+t1 error = 0.229821
+chi square = 1.00009
+NDF = 13
+
+
+
+2001 Hagedorn
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           8.82269e-01   2.69501e-01   3.03994e-06  -4.62073e-04
+   2  p1           1.93400e+02   8.83132e+01   2.07666e-03   2.06776e-06
+   3  p2           6.20620e+00   7.72667e-01   1.50349e-05  -3.13612e-04
+
+
+temperature 1 = 1.13344
+t1 error = 0.346225
+chi square = 8.49223
+NDF = 13
+
+
+
+Nameless
+
+
+
+
+NO
+
+
+
+1203_1
+
+
+
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.81074e+02   5.57367e-02   1.34026e-04  -1.39945e+00
+   2  p1          -5.82290e+02   8.45511e+00   1.24301e-01   2.36340e-04
+   3  p2          -5.63805e+02   1.11928e-01   2.68843e-04  -6.94222e-01
+
+
+temperature 1 = 0.00355778
+t1 error = 7.05506e-07
+chi square = 290.151
+NDF = 13
+
+
+1203_2
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           1.32361e+00   6.52717e-02   5.62341e-06   1.02475e-02
+   2  p1           1.28467e+01   1.33309e+00   1.14717e-04  -4.50321e-04
+
+
+temperature 1 = 0.755508
+t1 error = 0.0372566
+chi square = 8.50481
+NDF = 14
+
+
+1203_3
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.58128e+00   5.96093e-01   8.53418e-06   2.63432e-03
+   2  p1           4.41867e+01   1.66804e+01   3.24969e-04  -5.81928e-05
+   3  p2           1.12955e+00   4.29136e-02   1.84998e-06  -4.39107e-03
+
+
+temperature 1 = 0.387405
+t1 error = 0.0894632
+chi square = 4.56901
+NDF = 13
+
+
+
+1905_1
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           2.26518e+00   2.47577e-02   3.10735e-05  -1.06325e-02
+   2  p1           2.01970e+01   2.59636e-01   3.25571e-04  -2.23701e-04
+
+
+temperature 1 = 0.441466
+t1 error = 0.00482509
+chi square = 198.082
+NDF = 14
+
+
+1905_2
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           5.72117e+00   9.91026e-01   6.48892e-06  -1.67820e-02
+   2  p1           3.56114e+02   1.50541e+02   1.33655e-03   7.01055e-05
+   3  p2          -1.45526e-01   1.86533e-02   3.87767e-07  -3.10552e-01
+
+
+temperature 1 = 0.174789
+t1 error = 0.0302771
+chi square = 0.669127
+NDF = 13
+
+1905_3
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           5.47524e+00   1.06140e+00   1.88560e-05  -4.64702e-03
+   2  p1           1.93374e+02   9.02155e+01   2.07452e-03   3.58072e-05
+   3  p2          -1.61125e-01   2.04804e-02   1.25817e-06  -8.02973e-02
+
+
+temperature 1 = 0.18264
+t1 error = 0.0354055
+chi square = 8.49223
+NDF = 13
+
+

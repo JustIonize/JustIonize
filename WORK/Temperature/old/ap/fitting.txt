@@ -1,0 +1,6 @@
+Maxwell-Boltzmann (energy) (E = sqrt(pow(x,2)+pow(497.648*pow(10,6)))) x = pT
+
+f = new TF1("f", "",0,6)
+
+2*pow((sqrt(pow(x,2)+pow(497.648*pow(10,6)))/pi),0.5)*pow((8.61*[0]),-1.5)*exp(-sqrt(pow(x,2)+pow(497.648*pow(10,6)))/(8.61*[0]))
+

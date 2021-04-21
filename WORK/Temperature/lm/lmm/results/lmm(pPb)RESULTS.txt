@@ -1,0 +1,75 @@
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =      1.06477
+NDf                       =           14
+Edm                       =  6.66805e-10
+NCalls                    =          329
+p0                        =      3.69941   +/-   0.382474    
+p1                        =      385.874   +/-   223.621
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =     0.517446
+NDf                       =           14
+Edm                       =  7.04767e-09
+NCalls                    =          260
+p0                        =      2.94487   +/-   0.215971    
+p1                        =      78.8046   +/-   25.7019 
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =     0.505288
+NDf                       =           14
+Edm                       =  2.18239e-07
+NCalls                    =          220
+p0                        =      2.32383   +/-   0.204334    
+p1                        =      46.0904   +/-   14.2328     
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =     0.504052
+NDf                       =           13
+Edm                       =   9.9458e-08
+NCalls                    =          147
+p0                        =      2.43843   +/-   0.691845    
+p1                        =   -0.0368102   +/-   0.201984    
+p2                        =     0.561457   +/-   0.0889288   
+
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =     0.512457
+NDf                       =           13
+Edm                       =  3.26007e-07
+NCalls                    =          198
+p0                        =     0.544795   +/-   0.275368    
+p1                        =      3.47055   +/-   0.574883    
+p2                        =      3.45744   +/-   2.44395     
+Warning in <Fit>: Abnormal termination of minimization.
+
+****************************************
+         Invalid FitResult  (status = 4 )
+****************************************
+Minimizer is Minuit / Migrad
+Chi2                      =     0.649367
+NDf                       =           13
+Edm                       =  0.000133312
+NCalls                    =         1346
+p0                        =    0.0257876   +/-   0.0150288   
+p1                        =      22.6479   +/-   4.14197     
+p2                        =      104.247   +/-   62.7341     
+
+
+temperature 1 = 0.270313
+t1 error = 0.0279471
+temperature 2 = 0.339573
+t2 error = 0.0249036
+temperature 3 = 0.430323
+t3 error = 0.0378382
+temperature 4 = 0.410101
+t4 error = 0.116356
+temperature 5 = 1.83555
+t5 error = 0.927785
+temperature 6 = 38.7784
+t6 error = 22.5997
+
+Mean temper = 10.5161
+Total error =  5.65476
+

@@ -1,0 +1,161 @@
+pp ks0 1
+
+Chi/NDF =  10056.007375995323 / 12
+
+ normal areas 
+ 10.31802810579423
+
+ normal areas with X
+ 22.525942647391886
+
+ pT**2 * f(pT) areas 
+ 14.60622089509357
+
+ <pT**2> 
+ 0.6484177432097261
+
+ T init 
+ 0.5693934242725877
+
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         8,54564e+01   2,07927e-01  -5,18574e-06  -3,35101e-06
+   2  Temper       1,52173e-01   3,56722e-04  -1,20094e-08   6,34350e-04
+   3  Q            1,16472e+00   6,02048e-04   2,04249e-08   3,00392e-03
+   
+   
+pp ks0 2
+
+
+Chi/NDF =  617.9073212693916 / 12
+
+ normal areas 
+ 5.35759992428252
+
+ normal areas with X 
+ 11.175091884819123
+
+ pT**2 * f(pT) areas 
+ 7.630025235136266
+
+ <pT**2> 
+ 0.6827706934115972
+
+ T init 
+ 0.5842819068786904
+
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         3,44375e+01   4,57696e-01  -5,22176e-08  -9,17180e-08
+   2  Temper       1,90297e-01   1,57294e-03  -9,52783e-11  -3,54638e-05
+   3  Q            1,12200e+00   1,69983e-03  -9,53258e-11  -1,67996e-05
+
+
+pp L 1
+
+Chi/NDF =  1105.38648485641 / 12
+
+ normal areas 
+ 4.504019671254913
+
+ normal areas with X 
+ 9.39612813772446
+
+ pT**2 * f(pT) areas 
+ 8.058500599750099
+
+ <pT**2> 
+ 0.8576405602001181
+
+ T init 
+ 0.6548437066201821
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         2,04389e+01   1,94806e-01  -1,23650e-06   1,68350e-06
+   2  Temper       2,65078e-01   2,25713e-03   1,05390e-08   3,52345e-04
+   3  Q            1,07068e+00   2,53381e-03   8,80320e-10   2,58973e-04
+
+
+pp L 2
+
+
+Chi/NDF =  454.86089528066816 / 12
+
+ normal areas 
+ 2.2806944667392024
+
+ normal areas with X 
+ 4.75223801673756
+
+ pT**2 * f(pT) areas 
+ 4.0914986750050915
+
+ <pT**2> 
+ 0.8609624897984234
+
+ T init 
+ 0.6561106956140951
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         1,02675e+01   1,57632e-01   5,97177e-07   5,25640e-06
+   2  Temper       2,66851e-01   3,93702e-03  -1,43910e-08   5,04284e-04
+   3  Q            1,06943e+00   4,66060e-03   7,82744e-09   2,59393e-04
+
+pp LB 1
+
+
+Chi/NDF =  1130.7324288251857 / 12
+
+ normal areas 
+ 4.23209270232015
+
+ normal areas with X 
+ 8.85247903806516
+
+ pT**2 * f(pT) areas 
+ 7.546134750241598
+
+ <pT**2> 
+ 0.8524318123537649
+
+ T init 
+ 0.6528521319386822
+
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         2,01542e+01   2,12379e-01   3,43598e-07  -3,44322e-07
+   2  Temper       2,51551e-01   2,40093e-03  -5,89638e-09  -1,36525e-05
+   3  Q            1,08418e+00   2,79021e-03   7,73983e-09   2,22075e-05
+
+
+
+pp LB 2
+
+
+Chi/NDF =  483.4543555761438 / 12
+
+ normal areas 
+ 2.1404538776837754
+
+ normal areas with X 
+ 4.4684525408198414
+
+ pT**2 * f(pT) areas 
+ 3.839638780328276
+
+ <pT**2> 
+ 0.8592770640960652
+
+ T init 
+ 0.655468177753911
+
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  Area         1,00945e+01   1,73137e-01   6,87637e-04   1,58150e-05
+   2  Temper       2,53131e-01   4,11543e-03   7,97708e-06   1,82600e-04
+   3  Q            1,08375e+00   4,96952e-03   1,37566e-05  -3,71164e-04
+
+
+
