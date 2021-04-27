@@ -39,7 +39,7 @@ nChan = len(x)
 #mk = 0.49765 #GeV Ks0
 mk = 1.11568 #GeV L, Lbar
 nPar = 3
-nCHAN = 150
+nCHAN = 200
 length = 7.5
 
 
@@ -48,7 +48,7 @@ length = 7.5
 '''
 def Tsallis(pT, par):
 	Area, Temper, Q = par[0], par[1], par[2]
-	return Area*pT*pow( (1 - (1-Q)*((mk**2 + pT**2)**(0.5) - mk)/Temper) , (1/(1-Q)) )
+	return Area*pT*pow( (1 + (Q-1)*((mk**2 + pT**2)**(0.5) - mk)/Temper) , (-1/(Q-1)) )
 
 #------------------------------------------------------------------------------------------------------1
 
@@ -127,11 +127,101 @@ print('pT**2 * f(pT) areas 1\n',Anew1)
 '''
 #T init
 '''
-Tinit1 = np.sqrt( (Anew1/A_1)/2 )
-print('<pT**2> 1\n',Anew1/A_1)
+PT21 = Anew1/A_1
+Tinit1 = np.sqrt( (PT21)/2 )
+print('<pT**2> 1\n',PT21)
 print('T init 1\n',Tinit1)
 #print('\n DATA \n',DATA, '\n \n')
 
+
+#-------------------------------------------------------------------------------------------------------Error
+
+#--------------------------------------------------------------------------------------------------1
+'''
+#DX
+'''
+pT = X1
+DpT = DeltaX1
+
+A = parFit1[0]
+DA = parErr1[0]
+
+Temper = parFit1[1]
+DT = parErr1[1]
+
+q = parFit1[2]
+Dq = parErr1[2]
+
+#print('\n\npT :', pT, '\n', 'A :', A, '\n','T :', Temper, '\n', 'q :', q, '\n') 
+print('\n\nA :', A, '\n','T :', Temper, '\n', 'q :', q) 
+print('DpT :', DeltaX1[0], '\n', 'Dq :', parErr1[2], '\n','DT :', parErr1[1], '\n', 'DA :',parErr1[0]) 
+
+def dxdpT(i):
+	return  2*DpT[0]*3*pT[i]**2*A*pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)) )     +     2*DpT[0]*pT[i]**3*A*(-1/(q-1))*pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1) - 1) ) * ( (q-1)*(mk**2 + pT[i]**2)**(-0.5)*pT[i]/Temper )
+def dxdq(i):
+	return 2*DpT[0]*A*pT[i]**3 * ( np.log( 1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper ) * pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)) ) * (((mk**2+pT[i]**2)**(0.5)-mk)/Temper)   )
+def dxdT(i):
+	return 2*DpT[0]*A*pT[i]**3 * (-1/(q-1)) * pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)-1) ) * ( - (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper**2 )
+def dxdA(i):
+	return 2*DpT[0]*pT[i]**3*pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)) )
+
+def DX(i):
+	return np.sqrt( dxdpT(i)**2*DpT[i]**2 + dxdq(i)**2*Dq**2 + dxdT(i)**2*DT**2 + dxdA(i)**2*DA**2)
+
+'''
+#ONE
+'''
+ONE = Anew1
+N = nCHAN
+DONE = 0
+for i in range (0,N):
+	DONE = DONE + DX(i)
+print('Area 1 = ', Anew1, ' +- ', DONE)
+#print('\n', 2*DeltaX1[20]*Ynew1[20], ' +- ' , DX(20))
+
+'''
+#DY
+'''
+def dydpT(i):
+	return  2*DpT[0]*A*pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)) )     +     2*DpT[0]*pT[i]*A*(-1/(q-1))*pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1) - 1) ) * ( (q-1)*(mk**2 + pT[i]**2)**(-0.5)*pT[i]/Temper )
+def dydq(i):
+	return 2*DpT[0]*A*pT[i]* ( np.log( 1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper ) * pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)) ) * (((mk**2+pT[i]**2)**(0.5)-mk)/Temper)   )
+def dydT(i):
+	return 2*DpT[0]*A*pT[i] * (-1/(q-1)) * pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)-1) ) * ( - (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper**2 )
+def dydA(i):
+	return 2*DpT[0]*pT[i]*pow( (1 + (q-1)*((mk**2 + pT[i]**2)**(0.5) - mk)/Temper) , (-1/(q-1)) )
+
+def DY(i):
+	return np.sqrt( dydpT(i)**2*DpT[i]**2 + dydq(i)**2*Dq**2 + dydT(i)**2*DT**2 + dydA(i)**2*DA**2)
+
+'''
+#TWO
+'''
+TWO = A_1
+DTWO = 0 
+for i in range (0,N):
+	DTWO = DTWO + DY(i)
+print('Area 2 = ', A_1, ' +- ', DTWO)
+
+'''
+#D<pT2>
+'''
+DpT2 = np.sqrt( (1 / TWO)**2 * DONE**2 + (ONE / TWO**2)**2 * DTWO**2 )
+print('<pT2> =', PT21,' +- ',  DpT2)
+
+'''
+#DTinit
+'''
+DTinit = DpT2 / np.sqrt( 2* PT21 )
+print('Tinit =', Tinit1,' +- ',  DTinit )
+
+
+#-------------------------------------------------------------------------------------------WRITE TO TXT
+
+f = open("pPbL2FixedRESULTS.txt", "w")
+f.write('y range	q	T GeV	Ti GeV	chi/NDF\n')
+f.write('1	' + str(q) + '+-' + str(Dq) + '	' +str(Temper) + '+-' + str(DT) + '	' +str(Tinit1) + '+-' + str(DTinit) + '	' +str(valFCN1) +'/'+str(NDF1) +'\n')
+f.close()
 
 #---------------------------------------------------------------------------------------------------PLOT
 c1 = TCanvas( 'c1', 'A Simple Graph Example',500, 500 )
