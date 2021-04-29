@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import ctypes
 
 
-DATA = 'ppL2Yint.txt'
+DATA = 'ppLYint.txt'
 X, DeltaX, Y1, DeltaY1 = np.loadtxt(DATA, unpack=True)
 nChan = len(X)
 
@@ -246,8 +246,8 @@ for chan in range(nCHAN):
 
 Legend = ROOT.TLegend(0.45,0.88,0.93,0.73)
 Legend.SetHeader('#Lambda p-p #sqrt{s_{NN}}= 5.02 TeV', 'C')
-Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.867 GeV', 'l')
-Legend.AddEntry(Plot1, '2.0 < y < 4.0', 'lep')
+Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.788 GeV', 'l')
+Legend.AddEntry(Plot1, '2.0 < y < 4.5', 'lep')
 Legend.SetTextAlign(12)
 Legend.SetTextSize(0.04)
 Legend.SetFillStyle(0)

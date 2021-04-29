@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import ctypes
 
 
-DATA = 'ppLb2Yint.txt'
+DATA = 'ppKsYint.txt'
 X, DeltaX, Y1, DeltaY1 = np.loadtxt(DATA, unpack=True)
 nChan = len(X)
 
@@ -17,8 +17,8 @@ ex = np.array(DeltaX)
 y1 = np.array(Y1)
 ey1 = np.array(DeltaY1)
 
-#mk = 0.49765 #GeV Ks0
-mk = 1.11568 #GeV L, Lbar
+mk = 0.49765 #GeV Ks0
+#mk = 1.11568 #GeV L, Lbar
 nPar = 3
 nCHAN = 200
 length = 7.5
@@ -26,7 +26,6 @@ length = 7.5
 '''
 #Tsallis distr
 '''
-
 
 def Tsallis(pT, par):
 	Area, Temper, Q = par[0], par[1], par[2]
@@ -52,9 +51,9 @@ errordef = 1.
 
 # Chi square start parameters
 
-minuit1.DefineParameter(0, 'Area', 10.2, 1e-4, 0., 0.)
+minuit1.DefineParameter(0, 'Area', 30, 1e-4, 0., 0.)
 minuit1.DefineParameter(1, 'Temper', 0.65, 1e-4, 0., 0.)
-minuit1.DefineParameter(2, 'Q', 1.14, 1e-3, 0., 0.)
+minuit1.DefineParameter(2, 'Q', 1.20, 1e-3, 0., 0.)
 
 ierflg = ctypes.c_int(0)
 minuit1.mncomd("SET ERR " + str(1), ierflg)
@@ -116,6 +115,7 @@ Tinit1 = np.sqrt( (PT21)/2 )
 print('<pT**2> 1\n',PT21)
 print('T init 1\n',Tinit1)
 #print('\n DATA \n',DATA, '\n \n')
+
 
 #-------------------------------------------------------------------------------------------------------Error
 
@@ -201,20 +201,20 @@ print('Tinit =', Tinit1,' +- ',  DTinit )
 
 #-------------------------------------------------------------------------------------------WRITE TO TXT
 
-f = open("ppLb2FixedRESULTS.txt", "w")
+f = open("ppK2FixedRESULTS.txt", "w")
 f.write('y range	q	T GeV	Ti GeV	chi/NDF\n')
 f.write('1	' + str(q) + '+-' + str(Dq) + '	' +str(Temper) + '+-' + str(DT) + '	' +str(Tinit1) + '+-' + str(DTinit) + '	' +str(valFCN1) +'/'+str(NDF1) +'\n')
 f.close()
 
-
 #---------------------------------------------------------------------------------------------------PLOT
 c1 = TCanvas( 'c1', 'A Simple Graph Example',500, 500 )
-
 '''
 PLOT
 '''
 ROOT.gStyle.SetOptStat(0)
 Plot1 = ROOT.TGraphErrors(nChan, x, y1, ex, ey1)
+
+print('\n\n\n',x)
 Plot1.SetMarkerStyle(20)
 Plot1.SetMarkerColor(ROOT.kRed)
 Plot1.SetMarkerSize(1.1)
@@ -223,44 +223,33 @@ Plot1.GetXaxis().SetTitle('#it{p}_{T} [GeV/c]')
 Plot1.GetXaxis().SetTitleSize(0.05)
 Plot1.GetXaxis().SetTitleOffset(1.00)
 Plot1.GetXaxis().SetLabelSize(0.05)
-
-
-#Plot1.GetYaxis().SetTitle(' \\frac{\partial \sigma}{ \partial p_{T}} [\\frac{mb}{GeV/c}]')
 Plot1.GetYaxis().SetTitle('#frac{#partial^{2}#sigma}{#partialp_{T}#partialy} [mb/(GeV/c)]')
+#Plot1.GetYaxis().SetTitle(' \\frac{\partial \sigma}{ \partial p_{T}} [\\frac{mb}{GeV/c}]')
+#Plot1.GetYaxis().SetTitle(' \\frac{\partial^{2} \sigma}{ \partial p_{T} \partial y} [mb/(GeV/c)]')
 Plot1.GetYaxis().SetTitleSize(0.05)
 Plot1.GetYaxis().SetTitleOffset(1.25)
 Plot1.GetYaxis().SetLabelSize(0.05)
-
-#Plot1.SetTitle("K_{s}^{0} pp #sqrt{s_{NN}}= 5.02 TeV")
+Plot1.SetTitle(" ")
 #Plot1.SetTitle("K_{s}^{0}, LHCb p-Pb #sqrt{s_{NN}}= 5.02 TeV")
-
 #Plot1.SetTitle("#Lambda, LHCb p-p #sqrt{s_{NN}}= 5.02 TeV")
 #Plot1.SetTitle("#Lambda, LHCb p-Pb #sqrt{s_{NN}}= 5.02 TeV")
-
-Plot1.SetTitle(" ")
+#Plot1.SetTitle("#bar{#Lambda}, LHCb p-p #sqrt{s_{NN}}= 5.02 TeV")
 #Plot1.SetTitle("#bar{#Lambda}, LHCb p-Pb #sqrt{s_{NN}}= 5.02 TeV")
-
 fFit1 = ROOT.TH1F('tsallis1','Data VS Tsallis', nCHAN - 1, X1 - dx1/2.)
 fFit1.SetLineColor(ROOT.kRed)
 fFit1.SetLineWidth(2)
 fFit1.SetLineStyle(1)
-
 for chan in range(nCHAN):
     fFit1.SetBinContent(chan + 1 ,Y_1[chan])
     
-
-#------------------------------------------------------------------------------------------------------2
-
-
 Legend = ROOT.TLegend(0.45,0.88,0.93,0.73)
-Legend.SetHeader('#bar{#Lambda} p-p #sqrt{s_{NN}}= 5.02 TeV', 'C')
-Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.882 GeV', 'l')
-Legend.AddEntry(Plot1, '2.0 < y < 4.0', 'lep')
+Legend.SetHeader('K_{s}^{0} p-p #sqrt{s_{NN}}= 5.02 TeV', 'C')
+Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.664 GeV', 'l')
+Legend.AddEntry(Plot1, '2.0 < y < 4.5', 'lep')
 Legend.SetTextAlign(12)
 Legend.SetTextSize(0.04)
 Legend.SetFillStyle(0)
 Legend.SetLineWidth(0)
-
 
 Legend1 = ROOT.TLegend(0.33,0.87,0.43,0.77)
 Legend1.SetHeader('LHCb', 'C')
@@ -269,24 +258,38 @@ Legend1.SetTextSize(0.05)
 Legend1.SetFillStyle(0)
 Legend1.SetLineWidth(0)
 Legend1.SetTextFont(4)
+'''
+Legend1 = ROOT.TLegend(0.55,0.91,0.96,0.80)
+Legend1.AddEntry(fFit1,' ', 'l')
+Legend1.SetLineWidth(0)
+'''
+'''
+labelLHCb = TPaveLabel( 3,25,4, 30 , 'LHCb' )
+labelLHCb.SetFillColor(0)
+labelLHCb.SetTextSize(3)
+labelLHCb.SetTextAlign(12)
+labelLHCb.SetTextFont(0)
+#labelLHCb.SetFillStyle(0)
+'''
 
-
-
-
-
+'''
+Legend2 = ROOT.TLegend(0.05,0.10,0.30,0.05)
+Legend2.AddEntry('LHCb')
+Legend2.SetTextAlign(12)
+Legend2.SetTextSize(0.04)
+Legend2.SetTextFont(2)
+Legend2.SetFillStyle(0)
+Legend.SetLineWidth(0)
+'''
 ROOT.gPad.SetLogy(1)
 ROOT.gPad.SetTicks(1,1)
 ROOT.gPad.RedrawAxis()
-
 Plot1.Draw("AP")
 fFit1.Draw("SAME&l")
-
 Legend1.Draw("SAME")
 Legend.Draw("SAME")
 #Legend2.Draw("SAME")
 #labelLHCb.Draw("SAME")
-
-
 time.sleep(60)
 ROOT.gPad.Update()
 c1.Update()
