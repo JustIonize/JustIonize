@@ -218,7 +218,7 @@ Plot1.GetXaxis().SetTitleOffset(1.00)
 Plot1.GetXaxis().SetLabelSize(0.05)
 
 #Plot1.GetYaxis().SetTitle(' \\frac{\partial \sigma}{ \partial p_{T}} [\\frac{mb}{GeV/c}]')
-Plot1.GetYaxis().SetTitle('#frac{#partial^{2}#sigma}{#partialp_{T}#partialy} [mb/(GeV/c)]')
+Plot1.GetYaxis().SetTitle('#frac{d#sigma}{dp_{T}} [mb/(GeV/c)]')
 Plot1.GetYaxis().SetTitleSize(0.05)
 Plot1.GetYaxis().SetTitleOffset(1.25)
 Plot1.GetYaxis().SetLabelSize(0.05)
