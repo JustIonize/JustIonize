@@ -7,19 +7,19 @@ from ROOT import gROOT
 import matplotlib.pyplot as plt
 import ctypes
 
-DATA = 'pPbLYint.txt'
+DATA = 'LbpPb.txt'
 Xleft, DeltaXtime2, Y1, DeltaY1 = np.loadtxt(DATA, unpack=True)
 XleftReper, DeltaXtime2Reper, Y1Reper, DeltaY1Reper = np.loadtxt(DATA, unpack=True)
 
 y1 = np.array(Y1)
 ey1 = np.array(DeltaY1)
-x = Xleft + DeltaXtime2/2
-ex = DeltaXtime2/2
+x = (Xleft + DeltaXtime2)/2
+ex = (DeltaXtime2 - Xleft)/2
 
 x.sort()
 
-XleftReper = Xleft + DeltaXtime2/2
-DeltaXtime2Reper = DeltaXtime2/2
+XleftReper = (Xleft + DeltaXtime2)/2
+DeltaXtime2Reper = (DeltaXtime2 - Xleft)/2
 
 i = 0
 while i <= len(x)-1:
@@ -218,7 +218,7 @@ print('Tinit =', Tinit1,' +- ',  DTinit )
 
 #-------------------------------------------------------------------------------------------WRITE TO TXT
 
-f = open("pPbL2FixedRESULTS.txt", "w")
+f = open("pPbLbFixedRESULTS.txt", "w")
 f.write('y range	q	T GeV	Ti GeV	chi/NDF\n')
 f.write('1	' + str(q) + '+-' + str(Dq) + '	' +str(Temper) + '+-' + str(DT) + '	' +str(Tinit1) + '+-' + str(DTinit) + '	' +str(valFCN1) +'/'+str(NDF1) +'\n')
 f.close()
@@ -241,7 +241,7 @@ Plot1.GetXaxis().SetTitleOffset(1.00)
 Plot1.GetXaxis().SetLabelSize(0.05)
 
 #Plot1.GetYaxis().SetTitle(' \\frac{\partial \sigma}{ \partial p_{T}} [\\frac{mb}{GeV/c}]')
-Plot1.GetYaxis().SetTitle('#frac{#partial^{2}#sigma}{#partialp_{T}#partialy} [mb/(GeV/c)]')
+Plot1.GetYaxis().SetTitle('#frac{d#sigma}{dp_{T}} [mb/(GeV/c)]')
 Plot1.GetYaxis().SetTitleSize(0.05)
 Plot1.GetYaxis().SetTitleOffset(1.25)
 Plot1.GetYaxis().SetLabelSize(0.05)
@@ -266,9 +266,9 @@ for chan in range(nCHAN):
 
 
 Legend = ROOT.TLegend(0.45,0.88,0.93,0.73)
-Legend.SetHeader('#Lambda + #bar{#Lambda} p-Pb #sqrt{s_{NN}}= 5.02 TeV', 'C')
-Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.959 GeV', 'l')
-Legend.AddEntry(Plot1, '2.0 < y < 4.0', 'lep')
+Legend.SetHeader('#bar{#Lambda} p-Pb #sqrt{s_{NN}}= 5.02 TeV', 'C')
+Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.984 GeV', 'l')
+Legend.AddEntry(Plot1, '1.5 < y < 4.0', 'lep')
 Legend.SetTextAlign(12)
 Legend.SetTextSize(0.04)
 Legend.SetFillStyle(0)

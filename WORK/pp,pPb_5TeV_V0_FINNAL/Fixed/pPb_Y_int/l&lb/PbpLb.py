@@ -7,19 +7,21 @@ from ROOT import gROOT
 import matplotlib.pyplot as plt
 import ctypes
 
-DATA = 'pPbK2Yint.txt'
+
+
+DATA = 'LbPbp.txt'
 Xleft, DeltaXtime2, Y1, DeltaY1 = np.loadtxt(DATA, unpack=True)
 XleftReper, DeltaXtime2Reper, Y1Reper, DeltaY1Reper = np.loadtxt(DATA, unpack=True)
 
 y1 = np.array(Y1)
 ey1 = np.array(DeltaY1)
-x = Xleft + DeltaXtime2/2
-ex = DeltaXtime2/2
+x = (Xleft + DeltaXtime2)/2
+ex = (DeltaXtime2 - Xleft)/2
 
 x.sort()
 
-XleftReper = Xleft + DeltaXtime2/2
-DeltaXtime2Reper = DeltaXtime2/2
+XleftReper = (Xleft + DeltaXtime2)/2
+DeltaXtime2Reper = (DeltaXtime2 - Xleft)/2
 
 i = 0
 while i <= len(x)-1:
@@ -35,15 +37,16 @@ while i <= len(x)-1:
 	i = i + 1
 	
 nChan = len(x)
-mk = 0.49765 #GeV Ks0
+
+mk = 1.11568 #GeV L, Lbar
 nPar = 3
 nCHAN = 200
 length = 7.5
 
-
 '''
 #Tsallis distr
 '''
+
 def Tsallis(pT, par):
 	Area, Temper, Q = par[0], par[1], par[2]
 	return Area*pT*pow( (1 + (Q-1)*((mk**2 + pT**2)**(0.5) - mk)/Temper) , (-1/(Q-1)) )
@@ -68,7 +71,7 @@ errordef = 1.
 
 # Chi square start parameters
 
-minuit1.DefineParameter(0, 'Area', 500, 1e-1, 0., 0.)
+minuit1.DefineParameter(0, 'Area', 2500, 1e-1, 0., 0.)
 minuit1.DefineParameter(1, 'Temper', 0.21, 1e-4, 0., 0.)
 minuit1.DefineParameter(2, 'Q', 1.14, 1e-3, 0., 0.)
 
@@ -130,6 +133,7 @@ Tinit1 = np.sqrt( (PT21)/2 )
 print('<pT**2> 1\n',PT21)
 print('T init 1\n',Tinit1)
 #print('\n DATA \n',DATA, '\n \n')
+
 
 #-------------------------------------------------------------------------------------------------------Error
 
@@ -215,7 +219,7 @@ print('Tinit =', Tinit1,' +- ',  DTinit )
 
 #-------------------------------------------------------------------------------------------WRITE TO TXT
 
-f = open("pPbK2FixedRESULTS.txt", "w")
+f = open("PbpLbFixedRESULTS.txt", "w")
 f.write('y range	q	T GeV	Ti GeV	chi/NDF\n')
 f.write('1	' + str(q) + '+-' + str(Dq) + '	' +str(Temper) + '+-' + str(DT) + '	' +str(Tinit1) + '+-' + str(DTinit) + '	' +str(valFCN1) +'/'+str(NDF1) +'\n')
 f.close()
@@ -224,6 +228,7 @@ f.close()
 
 #---------------------------------------------------------------------------------------------------PLOT
 c1 = TCanvas( 'c1', 'A Simple Graph Example',500, 500 )
+
 '''
 #PLOT
 '''
@@ -240,16 +245,16 @@ Plot1.GetXaxis().SetTitleOffset(1.00)
 Plot1.GetXaxis().SetLabelSize(0.05)
 
 #Plot1.GetYaxis().SetTitle(' \\frac{\partial \sigma}{ \partial p_{T}} [\\frac{mb}{GeV/c}]')
-Plot1.GetYaxis().SetTitle('#frac{#partial^{2}#sigma}{#partialp_{T}#partialy} [mb/(GeV/c)]')
+Plot1.GetYaxis().SetTitle('#frac{d#sigma}{dp_{T}} [mb/(GeV/c)]')
 Plot1.GetYaxis().SetTitleSize(0.05)
 Plot1.GetYaxis().SetTitleOffset(1.25)
 Plot1.GetYaxis().SetLabelSize(0.05)
 
 #Plot1.SetTitle("K_{s}^{0}, LHCb p-p #sqrt{s_{NN}}= 5.02 TeV")
-Plot1.SetTitle(" ")
+#Plot1.SetTitle("K_{s}^{0} pPb #sqrt{s_{NN}}= 5.02 TeV")
 
 #Plot1.SetTitle("#Lambda, LHCb p-p #sqrt{s_{NN}}= 5.02 TeV")
-#Plot1.SetTitle("#Lambda, LHCb p-Pb #sqrt{s_{NN}}= 5.02 TeV")
+Plot1.SetTitle(" ")
 
 #Plot1.SetTitle("#bar{#Lambda}, LHCb p-p #sqrt{s_{NN}}= 5.02 TeV")
 #Plot1.SetTitle("#bar{#Lambda}, LHCb p-Pb #sqrt{s_{NN}}= 5.02 TeV")
@@ -264,12 +269,10 @@ for chan in range(nCHAN):
     
 
 
-
-
 Legend = ROOT.TLegend(0.45,0.88,0.93,0.73)
-Legend.SetHeader('K_{s}^{0} p-Pb #sqrt{s_{NN}}= 5.02 TeV', 'C')
-Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.788 GeV', 'l')
-Legend.AddEntry(Plot1, '2.0 < y < 4.0', 'lep')
+Legend.SetHeader('#bar{#Lambda} Pb-p #sqrt{s_{NN}}= 5.02 TeV', 'C')
+Legend.AddEntry(fFit1,'Tsallis, T_{init}= 0.971 GeV', 'l')
+Legend.AddEntry(Plot1, '-5.0 < y < -2.5', 'lep')
 Legend.SetTextAlign(12)
 Legend.SetTextSize(0.04)
 Legend.SetFillStyle(0)
